@@ -17,8 +17,8 @@ import { useMatchingAttraction } from "../attractions/AttractionList.js";
 
 let chosenPark = {};
 let checkPark = (obj)=> {
-return Object.keys(obj).length;
-}
+  return Object.keys(obj).length;
+  }
 let eateryChosen = {};
 let attractionChosen = {};
 
@@ -29,12 +29,12 @@ const eventHub = document.querySelector(".container");
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.classList.contains("itinerarySaveBtn")) {
     chosenPark = usePark();
-    let chosenEatery = useMatchingEatery();
-    let eateryObject = chosenEatery[0];
-    eateryChosen = eateryObject;
-    let chosenAttraction = useMatchingAttraction();
-    let attractionObject = chosenAttraction[0];
-    attractionChosen = attractionObject;    
+    let pullInChosenEatery = useMatchingEatery();
+    let grabEntireEateryObject = pullInChosenEatery[0];
+    eateryChosen = grabEntireEateryObject;
+    let pullInChosenAttraction = useMatchingAttraction();
+    let grabEntireAttractionObject = pullInChosenAttraction[0];
+    attractionChosen = grabEntireAttractionObject;    
 
     if (checkPark(chosenPark) !== 0 && chosenAttraction !== {} && chosenEatery !== {}) {
       const newItinerary = {
@@ -46,7 +46,7 @@ eventHub.addEventListener("click", (clickEvent) => {
       saveItinerary(newItinerary);
       elementTarget.innerHTML += ItineraryHTML(newItinerary);
     } else {
-      window.alert("please select park, eatery & attraction")
+      window.alert("Please select park, eatery & attraction")
     }
   }
 });

@@ -83,7 +83,6 @@ export const ItineraryHTML = (anObject) => {
 // EventHub for clicks on sidebar to show/hide more info in sidebar upon info button click, used in ItineraryList.js
 
 const eventHub = document.querySelector(".container");
-
 eventHub.addEventListener("click", event => {
   if (event.target.classList.contains("more-info-btn")) {
     const [btnPrefix, buttonID ] = event.target.id.split("--")

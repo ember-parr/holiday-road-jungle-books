@@ -110,7 +110,7 @@ eventHub.addEventListener("sidebarExtraInfo", customEvent => {
 })
 
 
-//functions to hide non-used info areas 
+//functions to hide non-used info areas. these functions are called in code above. 
 
 let hideHours = () => {
   let hourSpans = document.getElementsByClassName("parkHours")
